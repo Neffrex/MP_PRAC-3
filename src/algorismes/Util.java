@@ -58,12 +58,9 @@ public class Util {
 			files=Integer.parseInt(format[0])+1;
 			columnes=Integer.parseInt(format[1]);
 			laberint = new String[files][columnes];
-			laberint[0][0]=(format[0]);
-			laberint[0][1]=(format[1]);
-			laberint[0][2]=(format[2]);
-			laberint[0][3]=(format[3]);
-			laberint[0][4]=(format[4]);
-			laberint[0][5]=(format[5]);
+			for (int i=0; i<6;i++) {
+				laberint[0][i]=format[i];
+			}
 			for (int i=1; i<files;i++) {
 				format = sc.nextLine().split(",");
 				if (format.length!=columnes) throw new IndexOutOfBoundsException("hi han masses dades.");
