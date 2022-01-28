@@ -47,12 +47,14 @@ public class Util {
 		}
 		return true;
 	}
+	@SuppressWarnings("resource")
 	public static String[][] carregarLaberint() throws IndexOutOfBoundsException{
 		String laberint[][], format[];
 		int files, columnes;
+		Scanner sc;
 		try {
 			File fl = Util.chooseFile();
-			Scanner sc = new Scanner(fl);
+			sc = new Scanner(fl);
 			format = sc.nextLine().split(",");
 			if (format.length!=6) throw new IndexOutOfBoundsException("hi han masses dades.");
 			files=Integer.parseInt(format[0])+1;
@@ -73,6 +75,7 @@ public class Util {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 		return null;
 	}
 }
